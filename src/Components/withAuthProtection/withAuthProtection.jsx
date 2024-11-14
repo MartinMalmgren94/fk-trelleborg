@@ -17,13 +17,14 @@ function withAuthProtection(WrappedComponent) {
 
       return () => unsubscribe();
     }, [auth]);
-
-    if (!user) {
+    React.useEffect(() => {
+      if (!user || user == null) {
         if(location.pathname != "/"){
             navigate("/")
         }
-    }
-
+      }
+    }, [user])
+    
     return <WrappedComponent user={user} />;
   };
 }
