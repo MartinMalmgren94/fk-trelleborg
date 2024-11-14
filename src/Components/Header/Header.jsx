@@ -1,7 +1,7 @@
 import React from "react";
 
 import Button from "@mui/material/Button";
-import useAuthStatus from "../../services/auth/authService"
+import { useAuthStatus } from "../../services/auth/authService"
 
 import { StyledHeader, HeaderNav, HeaderUl, HeaderLi } from "./HeaderStyles";
 

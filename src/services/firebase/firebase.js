@@ -2,6 +2,10 @@ import { initializeApp } from "firebase/app";
 
 let firebaseConfig;
 
+/**
+ * The function `getFirebaseApp` initializes a Firebase app using configuration values from environment
+ * variables.
+ */
 export const getFirebaseApp = () => {
   if(!firebaseConfig) {
     firebaseConfig = initializeApp({

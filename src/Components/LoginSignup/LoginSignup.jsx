@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import { authWithEmail } from "../../services/auth/authService";
 
 import { SubmitContainer } from "../Styled/SubmitContainer";
 
@@ -12,6 +13,18 @@ const LoginSignup = () => {
   const SIGN_UP = "Sign up";
   const LOGIN = "Login";
   const [action, setAction] = useState(LOGIN);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function login(email, password) {
+    authWithEmail(email, password)
+    .then(() => {
+      // logga in.
+    })
+    .catch((error) => {
+      // set error text on login.
+    });
+  }
 
   return (
     <div className="container">
