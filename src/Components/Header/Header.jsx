@@ -6,11 +6,10 @@ import { useAuthStatus } from "../../services/auth/authService"
 import { StyledHeader, HeaderNav, HeaderUl, HeaderLi } from "./HeaderStyles";
 
 const Header = () => {
-  
   const { isAuthenticated } = useAuthStatus(); 
   return (
     <div>
-      {true ? null : (
+      {isAuthenticated ? (
         <StyledHeader>
           <HeaderNav>
             <HeaderUl>
@@ -23,7 +22,7 @@ const Header = () => {
             </HeaderUl>
           </HeaderNav>
         </StyledHeader>
-      )}
+      ) : null}
     </div>
   );
 };
